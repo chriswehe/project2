@@ -3,9 +3,14 @@
 ##Project Idea
 For my project I would like to build an API for pokemon cards. This API will have three collections of data built with three different models. The models will be for Pokemon cards, Pokemon card sets, and Pokemon card Types. 
 
+The API that I will be drawing from is:
+https://pokemontcg.io/
+
+The reason I am using this API is because it has links to high quality pokemon card images and I wanted to use this API to modify my Pokedex lab at a later date for fun.
+
 ###Pokemon Card Model
-`
-const attacksSchema = new Schema ({
+
+`const attacksSchema = new Schema ({
         cost: [],
         name: String,
         text: String,
@@ -18,7 +23,7 @@ const weaknessesSchema = new Schema({
     value: String
 })
 
-const Person = new Schema (
+const PokemonCard = new Schema (
     {
         id: String,
         name: String,
@@ -40,13 +45,13 @@ const Person = new Schema (
         attacks: [attacksSchema],
         weaknesses: [weaknessesSchema]
       },  
-);
-`
+);`
+
 
 ###Pokemon Sets Model
 
-`
-const Sets = new Schema ({ 
+
+`const Sets = new Schema ({ 
     code: String,
     ptcgoCode: String,
     name: String,
@@ -57,7 +62,4 @@ const Sets = new Schema ({
     releaseDate: String,
     symbolUrl: String,
     logoUrl: String
-})
-
-
-`
+})`
