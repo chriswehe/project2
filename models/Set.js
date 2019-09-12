@@ -1,5 +1,7 @@
 const mongoose = require ('../db/connection')
 
+
+
 const setsSchema = new mongoose.Schema ({ 
     code: String,
     ptcgoCode: String,
@@ -10,9 +12,13 @@ const setsSchema = new mongoose.Schema ({
     expandedLegal: Boolean,
     releaseDate: String,
     symbolUrl: String,
-    logoUrl: String
+    logoUrl: String,
+    cards: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Card"
+    }]
 })
 
-const Sets = mongoose.model("Sets", setsSchema)
+const Set = mongoose.model("Set", setsSchema)
 
-module.exports = Sets;
+module.exports = Set;

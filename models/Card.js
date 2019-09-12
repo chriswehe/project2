@@ -16,7 +16,6 @@ const weaknessesSchema = new Schema({
 
 const PokemonCardSchema = new Schema (
     {
-    id: String,
     name: String,
     nationalPokedexNumber: Number,
     imageUrl: String,
@@ -27,7 +26,7 @@ const PokemonCardSchema = new Schema (
     evolvesFrom: String,
     hp: String,
     retreatCost: [],
-    number: String,
+    number: Number,
     artist: String,
     rarity: String,
     series: String,
@@ -38,6 +37,6 @@ const PokemonCardSchema = new Schema (
       },  
 );
 
-const PokemonCards = mongoose.model("PokemonCards", PokemonCardSchema)
+const Card = mongoose.model("Card", PokemonCardSchema)
 
-module.exports = PokemonCards;
+module.exports = Card;
