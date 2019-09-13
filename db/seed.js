@@ -12,6 +12,9 @@ const Sets = require('../models/Set');
 const generationJsonData = require('./data/generations.json')
 const Generations = require('../models/Generation');
 
+const pokemonJsonData = require('./data/pokemon.json')
+const Pokemon = require('../models/Pokemon');
+
 Sets.deleteMany({}).then(() => {
     Sets.create(setsJsonData).then((sets) => {
         console.log(sets)
@@ -41,5 +44,21 @@ Cards.deleteMany({}).then(() => {
 Generations.deleteMany({}).then(() => {
     Generations.create(generationJsonData).then((generations) => {
         console.log(generations)
+    }).catch(err => console.log(err))
+}).catch(err => console.log(err))
+
+const pokemonSeedData = pokemonJsonData.map(pokeJson => {
+    const pokeData = {};
+    pokeNum = pokeJson.url.slice(34, -1);
+    pokeData.name = pokeJson.name;
+    pokeData.url = pokeNum.url;
+    pokeData.pokedexNum = pokeNum;
+    return pokeData;
+})
+console.log(pokemonSeedData)
+
+Pokemon.deleteMany({}).then(() => {
+    Pokemon.create(pokemonSeedData).then((pokemon) => {
+        console.log(pokemon)
     }).catch(err => console.log(err))
 }).catch(err => console.log(err))

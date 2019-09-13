@@ -31,10 +31,22 @@ const PokemonCardSchema = new Schema (
     retreatCost: [],
     number: Number,
     artist: String,
-    rarity: String,
-    series: String,
-    set: String,
-    setCode: String,
+    rarity: {
+        type: String,
+        lowercase: true
+    },
+    series: {
+        type: String,
+        lowercase: true
+    },
+    set: {
+        type: String,
+        lowercase: true
+    },
+    setCode: {
+        type: String,
+        lowercase: true
+    },
     attacks: [attacksSchema],
     weaknesses: [weaknessesSchema]
       },  

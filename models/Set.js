@@ -5,8 +5,14 @@ const mongoose = require ('../db/connection')
 const setsSchema = new mongoose.Schema ({ 
     code: String,
     ptcgoCode: String,
-    name: String,
-    series: String,
+    name: {
+        type: String,
+        lowercase: true
+    },
+    series: {
+        type: String,
+        lowercase: true
+    },
     totalCards: Number,
     standardLegal: Boolean,
     expandedLegal: Boolean,

@@ -15,5 +15,11 @@ module.exports = {
         .then(sets => {
             res.json(sets);
         });
+    },
+    showName: (req, res) => {
+        Sets.find({name: req.params.name})
+            .then(set => {
+                res.json(set)
+            })
     }
 }
