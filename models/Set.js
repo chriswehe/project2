@@ -10,7 +10,7 @@ const setsSchema = new mongoose.Schema ({
     totalCards: Number,
     standardLegal: Boolean,
     expandedLegal: Boolean,
-    releaseDate: String,
+    releaseDate: Date,
     symbolUrl: String,
     logoUrl: String,
     cards: [{

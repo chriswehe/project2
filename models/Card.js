@@ -16,7 +16,10 @@ const weaknessesSchema = new Schema({
 
 const PokemonCardSchema = new Schema (
     {
-    name: String,
+    name: {
+        type: String,
+        lowercase: true
+    },
     nationalPokedexNumber: Number,
     imageUrl: String,
     imageUrlHiRes: String,

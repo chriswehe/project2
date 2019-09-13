@@ -6,11 +6,25 @@ const nameURLSchema = new Schema({
     url: String
 })
 
+const speciesSchema = new Schema({
+    name: {
+        type: String,
+        lowercase: true
+    },
+    url: String,
+    cards: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Card"
+    }]
+})
+
+
+
 const generationSchema = new Schema({ 
     name: String,
     id: Number,
     moves: [nameURLSchema],
-    pokemon_species: [nameURLSchema],
+    pokemon_species: [speciesSchema],
     types: [nameURLSchema],
     version_groups: [nameURLSchema]
 })
