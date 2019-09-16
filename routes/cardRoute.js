@@ -9,9 +9,5 @@ router.get('/rarity/:rarity', cardsContrl.showRarity)
 router.post('/', cardsContrl.create)
 router.put('/:name', cardsContrl.edit)
 router.delete('/:name', cardsContrl.destroy)
-//this delete removes all of the cards by a name
-//there frequently are multiple cards with the same name.
-
-
 
 module.exports = router;
